@@ -91,13 +91,15 @@ public class Shuffler {
     public static void selectionShuffle(int[] values) {
         ArrayList<Integer> arr = new ArrayList<Integer>();
         ArrayList<Integer> shuffled =  new ArrayList<Integer>();
-        double rand = 0;
-        double[] chosen = new double[values.length];
-        for(int i = 0; i < values.length; i++){
+        for(int i=0;i<values.length;i++) {
             arr.add(values[i]);
         }
-        for(int j = values.length; j > 0; j--){
-            
+        int random;
+        for (int x =values.length;x>0;x--)
+        {
+            random =(int)(Math.random()*x);
+            shuffled.add(arr.get(random));
+            arr.remove(random);
         }
     }
 }
